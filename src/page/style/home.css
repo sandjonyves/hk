@@ -1,13 +1,19 @@
 
 .image{
 
-    background-image: url('../../assets/back/images.jpeg') ;
+    /* background-image: url('../../assets/back/images.jpeg') ; */
     background-size: cover;
-    min-height: 70vh;
+    margin-right: 5px;
+  
+    min-width: 50%;
     background-repeat: no-repeat;
     position: relative;
     background-color :rgba(0,0,0,.2);
-    margin-bottom: 50px;
+    right: 0;
+    
+   
+
+
     z-index: 0;
 }   
 .image2{
@@ -106,16 +112,10 @@ h2{
 
 @media (max-width:768px){
 
-    /* .image{
-        min-height:30vh;	
-       } */
-       /* h1 {
-           font-size:calc(1.525rem + 3.3vw )
-       }
-       h2{
-        margin-top: 10rem;
-       
-       } */
+    .image{
+        min-width:30vh;	
+       } 
+  
        .color-overlay{
         margin-bottom: 20rem;
 

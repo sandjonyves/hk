@@ -14,20 +14,20 @@ function App() {
 
   // intersection observer sert a faire des animation
 
-  const newsletterRef = useRef()
-  const [show,setShow] =useState()
-  useEffect(()=>{
-    const observer  = new IntersectionObserver(entrie=>{
-      if(entrie[0].isIntersecting){
-        // const footer =document.querySelector("#footer").setAttribute('class','')
-        setShow(true)
-        // observer.unobserve(newsletterRef.current)
-      }else{
-        setShow(false)
-      }
-    })
-  observer.observe(newsletterRef.current)  
-  },[])
+  // const newsletterRef = useRef()
+  // const [show,setShow] =useState()
+  // useEffect(()=>{
+  //   const observer  = new IntersectionObserver(entrie=>{
+  //     if(entrie[0].isIntersecting){
+  //       // const footer =document.querySelector("#footer").setAttribute('class','')
+  //       setShow(true)
+  //       // observer.unobserve(newsletterRef.current)
+  //     }else{
+  //       setShow(false)
+  //     }
+  //   })
+  // observer.observe(newsletterRef.current)  
+  // },[])
 
   return (
     <div className="App ">
@@ -54,7 +54,7 @@ function App() {
           <About></About>
     </div>
           
-    <footer ref={newsletterRef} className={`${show?'animate-jump-in animate-once animate-duration-[2000ms] animate-ease-in':''}`}>
+    <footer >
         <Footter ></Footter>
     </footer>
 

@@ -3,20 +3,20 @@ import React, { useEffect, useRef, useState } from 'react'
 
 export default function Service() {
 
-  const newsletterRef = useRef()
-  const [show,setShow] =useState()
-  useEffect(()=>{
-    const observer  = new IntersectionObserver(entrie=>{
-      if(entrie[0].isIntersecting){
-        setShow(true)
-        //const footer =document.querySelector("#footer").setAttribute('class','text-2xl  text-gray-900 dark:text-gray-800 animate-flip-up animate-ease-in')
-        //  observer.unobserve(newsletterRef.current)
-      }else{
-        setShow(false)
-      }
-    })
-  observer.observe(newsletterRef.current)  
-  },[])
+  // const newsletterRef = useRef()
+  // const [show,setShow] =useState()
+  // useEffect(()=>{
+  //   const observer  = new IntersectionObserver(entrie=>{
+  //     if(entrie[0].isIntersecting){
+  //       setShow(true)
+  //       //const footer =document.querySelector("#footer").setAttribute('class','text-2xl  text-gray-900 dark:text-gray-800 animate-flip-up animate-ease-in')
+  //       //  observer.unobserve(newsletterRef.current)
+  //     }else{
+  //       setShow(false)
+  //     }
+  //   })
+  // observer.observe(newsletterRef.current)  
+  // },[])
   return (
     <div name='service'>
 
@@ -28,14 +28,14 @@ export default function Service() {
         </h4>
 
 
-        <h4 ref={newsletterRef} className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`}>        1. Gamme complète de services
+        <h4  className={`'font-bold  flex justify-start'font-bold '}`}>        1. Gamme complète de services
                     Historiquement présent sur plusieurs métiers :  </h4 >
                     <span className='ml-4 flex justify-start'>    • l’audit légal et contractuel,  </span>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • l’expertise comptable            ,</p>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • le conseil comptable et financier,</p>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • l’assistance comptable et fiscale,</p>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • la restructuration des organisations,</p>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • la formation, </p>
+                    <p  className={`'flex justify-start'`}>    • l’expertise comptable            ,</p>
+                    <p  className={`'flex justify-start'`}>    • le conseil comptable et financier,</p>
+                    <p  className={`'flex justify-start'`}>    • l’assistance comptable et fiscale,</p>
+                    <p  className={`'flex justify-start'`}>    • la restructuration des organisations,</p>
+                    <p  className={`'flex justify-start'`}>    • la formation, </p>
                     
 </Card>
       

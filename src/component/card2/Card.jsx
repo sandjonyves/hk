@@ -8,20 +8,20 @@ function Cards2() {
 
   const newsletterRef = useRef()
   const [show,setShow] =useState()
-  useEffect(()=>{
-    const observer  = new IntersectionObserver(entrie=>{
-      if(entrie[0].isIntersecting){
-        setShow(true)
-        //const footer =document.querySelector("#footer").setAttribute('class','text-2xl  text-gray-900 dark:text-gray-800 animate-flip-up animate-ease-in')
-        //  observer.unobserve(newsletterRef.current)
-      }else{
-        setShow(false)
-      }
-    })
-  observer.observe(newsletterRef.current)  
-  },[])
+  // useEffect(()=>{
+  //   const observer  = new IntersectionObserver(entrie=>{
+  //     if(entrie[0].isIntersecting){
+  //       setShow(true)
+  //       //const footer =document.querySelector("#footer").setAttribute('class','text-2xl  text-gray-900 dark:text-gray-800 animate-flip-up animate-ease-in')
+  //       //  observer.unobserve(newsletterRef.current)
+  //     }else{
+  //       setShow(false)
+  //     }
+  //   })
+  // observer.observe(newsletterRef.current)  
+  // },[])
   return (
-    <Card  className="border-x-4 border-green-500 mb-20 md:m-40 m-0 drop-shadow-lg"  >
+    <Card  className="border-x-4 border-green-500 mb-20 md:m-5 m-0 drop-shadow-lg"  >
 
         <h4 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         CABINET HK AUDIT & CONSEILS
@@ -29,14 +29,14 @@ function Cards2() {
         </h4>
         
       
-        <h5 ref={newsletterRef} className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`}>        1. Gamme complète de services
+        <h5  className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`}>        1. Gamme complète de services
 
      
       permet à votre entreprise de bénéficier des 
       compétences et de l'expertise
       d’un Directeur Administratif et Financier
       </h5>
-      <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}> 
+      <p  className={`flex justify-start}`}> 
       
       Dirigeant de PME/TPE, gérant d’association ou créateur 
       d’entreprise, si vous souhaitez être accompagné dans 

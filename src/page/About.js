@@ -7,27 +7,27 @@ export default function About() {
 
   const newsletterRef = useRef()
   const [show,setShow] =useState()
-  useEffect(()=>{
-    const observer  = new IntersectionObserver(entrie=>{
-      if(entrie[0].isIntersecting){
-        setShow(true)
-        //const footer =document.querySelector("#footer").setAttribute('class','text-2xl  text-gray-900 dark:text-gray-800 animate-flip-up animate-ease-in')
-        // observer.unobserve(newsletterRef.current)
-      }else{
-        setShow(false)
-      }
-    })
-  observer.observe(newsletterRef.current)  
-  },[])
+  // useEffect(()=>{
+  //   const observer  = new IntersectionObserver(entrie=>{
+  //     if(entrie[0].isIntersecting){
+  //       setShow(true)
+  //       //const footer =document.querySelector("#footer").setAttribute('class','text-2xl  text-gray-900 dark:text-gray-800 animate-flip-up animate-ease-in')
+  //       // observer.unobserve(newsletterRef.current)
+  //     }else{
+  //       setShow(false)
+  //     }
+  //   })
+  // observer.observe(newsletterRef.current)  
+  // },[])
   return (
     <div name='about'>
 
         <Card  className="border-x-4 border-green-500 mb-20 md:m-40 m-0 drop-shadow-lg"  >
 
-            <h4 ref={newsletterRef} className={`${show?'font-bold  text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-start animate-flip-up animate-ease-in':''}`} >
+            <h4  className={`${show?'font-bold  text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-start animate-flip-up animate-ease-in':''}`} >
             CABINET HK AUDIT & CONSEILS
             </h4>
-            <h5 ref={newsletterRef} className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`} >
+            <h5  className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`} >
 
             Notre cabinet est présent sur son marché depuis 1990 sous différentes structures, HK AUDIT & CONSEILS possède une longue expérience dans l’expertise comptable puisqu’elle a été l’une des premières à intégrer cette spéciapté. Le cabinet regroupe aujourd’hui 2 associés .
             Avec l’ambition de marquer clairement sa différence, notamment en termes de service, HK AUDIT & CONSEILS à la volonté de rester un cabinet indépendant.
@@ -38,11 +38,11 @@ export default function About() {
             <h4 ref={newsletterRef} className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`}>        1. Gamme complète de services
                     Historiquement présent sur plusieurs métiers :  </h4 >
                     <span className='ml-4 flex justify-start'>    • l’audit légal et contractuel,  </span>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • l’expertise comptable            ,</p>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • le conseil comptable et financier,</p>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • l’assistance comptable et fiscale,</p>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • la restructuration des organisations,</p>
-                    <p ref={newsletterRef} className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • la formation, </p>
+                    <p  className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • l’expertise comptable            ,</p>
+                    <p  className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • le conseil comptable et financier,</p>
+                    <p  className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • l’assistance comptable et fiscale,</p>
+                    <p  className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • la restructuration des organisations,</p>
+                    <p  className={`${show?'flex justify-start animate-flip-up animate-ease-in animate-duration-[2000ms]':'flex justify-start'}`}>    • la formation, </p>
                     
            
           
