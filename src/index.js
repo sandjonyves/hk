@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import About from './page/About';
 import ButtonGroup from './component/ButtonGroup/ButtonGroup';
 import Service from './page/Service';
+import Forms from './component/form/Forms';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path:'#service',
     element:<Service></Service>
+  },
+  {
+    path:'/form',
+    element:<Forms></Forms>
   }
 ]);
 

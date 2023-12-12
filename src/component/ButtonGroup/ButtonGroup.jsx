@@ -27,7 +27,7 @@ const [openModal2,setOpenModal2] =useState()
         
         <div className='' >
             <h5>Expertise</h5>
-            <Button color='bg-green-500' className='bg-green-700  hover:bg-green-500 text-white' onClick={()=>{setOpenModal(true)}}>
+            <Button color='bg-primary' className='bg-primary  hover:bg-green-500 text-white' onClick={()=>{setOpenModal(true)}}>
             Decouvrir Le cabinet Hk
             </Button>
         </div>
@@ -35,7 +35,7 @@ const [openModal2,setOpenModal2] =useState()
             <h5>
               Competence
             </h5>
-            <Button color='bg-green-500' className='bg-green-700  hover:bg-green-500 text-white' onClick={()=>{setOpenModal2(true)}}>
+            <Button color='bg-primary'className='bg-primary  hover:bg-green-500 text-white' onClick={()=>{setOpenModal2(true)}}>
                 Nos domaine de competences
             </Button>
         </div>
@@ -43,12 +43,12 @@ const [openModal2,setOpenModal2] =useState()
             <h5>
                 Qui somme nous
             </h5>
-            <Button color='bg-green-500' className='bg-green-700  hover:bg-green-500 text-white' href=''>
+            <Button color='bg-primary' className='bg-primary  hover:bg-green-500 text-white' href=''>
                 En savoir plus
             </Button>
         </div>
       {/* <Button.Group outline className='space-x-4'>
-        <Button color="gray">Profile</Button>
+        <Button color='bg-primary'color="gray">Profile</Button>
       
       </Button.Group> */}
    

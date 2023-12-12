@@ -24,7 +24,7 @@ export default function About() {
 
         <Card  className="border-x-4 border-green-500 mb-20 md:m-40 m-0 drop-shadow-lg"  >
 
-            <h4  className={`${show?'font-bold  text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-start animate-flip-up animate-ease-in':''}`} >
+            <h4  className={`font-bold  text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-start animate-flip-up animate-ease-in'}`} >
             CABINET HK AUDIT & CONSEILS
             </h4>
             <h5  className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`} >

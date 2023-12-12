@@ -10,7 +10,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { SiGmail, SiYahoo } from "react-icons/si";
 function Footter() {
   return (
-    <Footer container className=''>
+    <Footer container className='mt-10'>
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
@@ -34,12 +34,12 @@ function Footter() {
               <Footer.LinkGroup col>
                 <Footer.Link href="#">Watsapp</Footer.Link>
                 <Footer.Link href="#">Facebook</Footer.Link>
-                <Footer.Link>          <div color='bg-transparent' className='' href='tel:\\6242007263'><FaPhoneAlt color='blue'/> <span className='text-blue-500' >(+237)6242007263</span></div>
+                <Footer.Link>          <div color='bg-transparent' className=' ' href='tel:\\6242007263'><span className='text-primary  hover:text-green-500 ' ><FaPhoneAlt color='  '/> (+237)6242007263</span></div>
                 </Footer.Link>
-                <Footer.Link>
-                <div color='bg-transparent' className='' href='tel:\\6222222292'><FaPhoneAlt color='blue'/> <span className='text-blue-500' >(+237)6222222292</span></div>
+                {/* <Footer.Link>
+                <div color='bg-transparent' className='bg-primary  hover:bg-green-500 ' href='tel:\\6222222292'><FaPhoneAlt color='blue'/> <span className='text-white' >(+237)6222222292</span></div>
 
-                </Footer.Link>
+                </Footer.Link> */}
               </Footer.LinkGroup>
             </div>
             <div>

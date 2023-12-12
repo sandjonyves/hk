@@ -21,7 +21,7 @@ function Cards2() {
   // observer.observe(newsletterRef.current)  
   // },[])
   return (
-    <Card  className="border-x-4 border-green-500 mb-20 md:m-5 m-0 drop-shadow-lg"  >
+    <Card  className="border-x-4 border-y-4 mb-20 md:m-5 m-0 drop-shadow-lg"  >
 
         <h4 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         CABINET HK AUDIT & CONSEILS

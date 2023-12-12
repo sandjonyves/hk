@@ -25,7 +25,7 @@ export default function Component() {
 {/* 
         <p onClick={serOpenMo1dal(true)}>HJHJHJHJHJ</p> */}
         
-      <Button  color='green' className='bg-green-400' href='tel:\\699852502' ><FaPhoneAlt color='white'/><span className='text-white' >(+237)699852502</span></Button>
+      <Button  color='green' className='bg-primary' href='tel:\\699852502' ><FaPhoneAlt color='white'/><span className='text-white' >(+237)699852502</span></Button>
       {/* <Button  color='green' className='bg-green-400' href='tel:\\677795125'> <span className='text-white' >(+237)677795125</span></Button> */}
       
     
@@ -60,7 +60,7 @@ export default function Component() {
 </Link>
 </Navbar.Link>
        
-        <Navbar.Link href="#" >   <Dropdown label="Contact" inline>
+        <Navbar.Link href="#"  >   <Dropdown label="Contact" className='z-100' inline placement='left'>
       <Dropdown.Item ><PiWhatsappLogoThin color='green' size={40}/>Whatsappd</Dropdown.Item>
       <Dropdown.Item ><FaSquareFacebook color='blue' size={40}/>Facebook</Dropdown.Item>
       <Dropdown.Item ><PiInstagramLogoBold color='red' size={40}/>Instagramme</Dropdown.Item>

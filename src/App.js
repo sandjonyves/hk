@@ -10,6 +10,7 @@ import About from './page/About';
 import { Modals } from './component/modal/modal';
 import { useEffect, useRef, useState } from 'react';
 import ButtonGroup from './component/ButtonGroup/ButtonGroup';
+import Forms from './component/form/Forms';
 function App() {
 
   // intersection observer sert a faire des animation
@@ -54,8 +55,13 @@ function App() {
           <About></About>
     </div>
           
+          <div>
+            <Forms></Forms>
+          </div>
+          
     <footer >
         <Footter ></Footter>
+       
     </footer>
 
  

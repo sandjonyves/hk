@@ -22,6 +22,7 @@ import { SiGmail, SiYahoo } from "react-icons/si";
 import image from './logo192.png'
 import { Link } from "react-scroll";
 import imgabeBackgound from '../assets/back/image9.jpg'
+import Forms from "../component/form/Forms";
 
 
 
@@ -30,7 +31,7 @@ export default function Home() {
   //text parlent de hk
 
   const newsletterRef = useRef()
-   const [show,setShow] =useState()
+   const [show,setShow] =useState(false)
   // useEffect(()=>{
   //   const observer  = new IntersectionObserver(entrie=>{
   //     if(entrie[0].isIntersecting){
@@ -55,7 +56,8 @@ export default function Home() {
   <section className="">
   <div class="grid grid-cols-1 md:grid-cols-2  max-w-screen-4xl md:pt-0 lg:pl-24 md:flex-row mx-auto md:pr-0 flex flex-col mr-0">
       <div class="flex-1 flex justify-center flex-col px-4 lg:-mr-24">
-      <div class="text-gray-900"><ul id="breadcrumbs" class="mt-6 lg:pt-0 flex text-xs space-x-1"><li><Link to="/" class="hover:underline active">
+      <div class="text-gray-900"><ul id="breadcrumbs" class="mt-6 lg:pt-0 flex text-xs space-x-1"><li>
+        <Link to="/" class="hover:underline active">
         Home
       </Link></li><li><span class="font-semibold">Déposez vos impôts
 
@@ -65,22 +67,26 @@ export default function Home() {
         Que vous souhaitiez déclarer vos impôts auprès d'un expert dans un bureau, à distance ou le faire vous-même, nous vous proposons plusieurs façons de déclarer.
 
             </h2><div class="flex flex-col md:flex-row"><div class="flex flex-col md:flex-row pt-5 md:pt-6"><div class="md:flex items-center justify-start w-full md:w-min"><div class="CTA flex inline whitespace-nowrap  w-full md:w-max"><div class="relative w-full ">
-              <button href="/file-with-an-expert/"
-               class="text-white flex mx-auto md:mx-0 outline-none focus:outline-black border-transparent border-2 text-black bg-green-300 no-underline hover:bg-green-100 leading-none w-full md:w-auto justify-center inline-flex font-medium items-center px-4 py-5 md:py-4 lg:px-6 border-transparent 
-                       leading-6 focus:outline-black transition ease-in-out duration-150">
-                conctacter un expert </button></div></div></div></div><div class="flex flex-col md:flex-row pt-5 md:pt-6">
-                  <div class="md:flex items-center justify-start w-full md:w-min"><div class="px-2 text-gray-900">
-                    </div><div class="CTA flex inline whitespace-nowrap  w-full md:w-max"><div class="relative w-full ">
-                      <Link href="/file-your-taxes/online-tax-software/"
+            <Link to="about"
                          class="flex mx-auto md:mx-0 outline-none focus:outline-black border-transparent border-2 text-white
                           bg-black hover:bg-gray-800 leading-none w-full md:w-auto justify-center inline-flex 
                           font-medium items-center px-4 py-5 md:py-4 lg:px-6 border border-transparent text-base leading-6 
                           focus:outline-black transition ease-in-out duration-150">
-                          prendre rendez vous</Link></div></div></div></div></div></div>
+                       conctacter un expert   </Link></div></div></div></div><div class="flex flex-col md:flex-row pt-5 md:pt-6">
+                  <div class="md:flex items-center justify-start w-full md:w-min"><div class="px-2 text-gray-900">
+                    </div><div class="CTA flex inline whitespace-nowrap  w-full md:w-max"><div class="relative w-full ">
+                      
+                          
+                          <button onClick={() => setShow(true)} 
+               class="text-white flex mx-auto md:mx-0 outline-none focus:outline-black border-transparent 
+               border-2 text-white bg-primary  hover:bg-green-500 no-underline hover:bg-green-800 leading-none w-full md:w-auto justify-center inline-flex font-medium items-center px-4 py-5 md:py-4 lg:px-6 border-transparent 
+                       leading-6 focus:outline-black transition ease-in-out duration-150">
+                  prendre rendez vous </button>
+                          </div></div></div></div></div></div>
       </div>
       <div class="flex-2 mt-1 relative text-left ">
       <div class="w-full md:w-full h-full ">
-        <div class="w-full h-full inset-0 flex items-center justify-center overflow-hidden relative ">
+        <div class="w-full h-full inset-0 flex items-center justify-center overflow-hidden relative z-0">
           <img src={imgabeBackgound} alt="Getty Images 1152308719" class="object-contain w-full h-full  lg:block "></img>
           </div></div>
     </div>
@@ -107,9 +113,9 @@ export default function Home() {
   </section>
 
   <section>
-    <div class="flex md:flex-wrap overflow-hidden max-w-screen-2xl px-0 md:px-20 md:py-10 flex-col md:flex-row mx-auto">
+    <div class="flex md:flex-wrap overflow-hidden max-w-screen-2xl px-0 md:px-20 md:py-10 flex-col md:flex-row ">
     <div class="flex w-full flex-col md:px-0 text-center px-6">
-    <h2 class="md:px-8 text-3xl md:text-4xl py-8 font-bold text-black w-11/12 md:w-5/6 lg:w-8/12 xl:w-1/2 mx-auto">Travailler avec un Expert  Comptable.</h2>
+    <h2 class="md:px-8 text-3xl md:text-4xl py-8 font-bold text-black w-11/12 md:w-5/6 lg:w-8/12 xl:w-1/2 ">Travailler avec un Expert  Comptable.</h2>
     <div class="py-3 md:px-8 mx-auto text-xl md:w-8/12 textColor">
     <p> Directeur Administraif et Finencier a temps partage partenaire de votre gestion finaciere.</p>
     </div>
@@ -176,8 +182,8 @@ export default function Home() {
     </Card>
        </div>
        
-         <button  className="m-4 flex mx-auto md:mx-0 outline-none focus:outline-green border-transparent border-2 text-white
-                          bg-green-500 hover:bg-green-800 leading-none w-full md:w-auto justify-center inline-flex 
+         <button onClick={() => setShow(true)} className="m-4 flex mx-auto md:mx-0 outline-none focus:outline-green border-transparent border-2 text-white
+                         bg-primary  hover:bg-green-500  leading-none w-full md:w-auto justify-center inline-flex 
                           font-medium items-center px-4 py-5 md:py-4 lg:px-6 border border-transparent text-base leading-6 
                           focus:outline-green transition ease-in-out duration-150">
            Nous Conctacter 
@@ -189,6 +195,8 @@ export default function Home() {
           />
         </svg>
       </button>
+
+      <Forms openModal = {show} setOpenModal = {setShow}></Forms>
     </div>
     
     {/* <div class="flex justify-center flex-wrap flex-col md:flex-row w-full space-x-1 space-y-4">
@@ -287,11 +295,17 @@ export default function Home() {
     </Cards2>
   </div>
 
-  <div class='image2' >
+  {/* <div class='image2' >
     <div class='btnG' id="btnGroup">
       <ButtonGroup>
       </ButtonGroup>
     </div>
+  </div> */}
+  <div className="mb-10">
+  <Carousels>
+
+</Carousels>
+
   </div>
 
 

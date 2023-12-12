@@ -5,7 +5,11 @@ module.exports = {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'primary':'#3AA852',
+      }
+    },
   },
   plugins: [ require('flowbite/plugin'),require('tailwindcss-animated')],
 
