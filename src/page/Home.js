@@ -94,7 +94,7 @@ const [show,setShow] = useState(false)
       {t("sc1Text1")}
       </h5>
       <p className="font-normal text-gray-700 dark:text-gray-400">
-      {t("sc1Text1")}  </p>
+      {t("sc1Text2")}  </p>
   
     </Card>
        </div>
@@ -111,7 +111,7 @@ const [show,setShow] = useState(false)
        <div>
          <Card className="max-w-sm">
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      {t("sc2Text1")}
+      {t("sc3Text1")}
       </h5>
       <p className="font-normal text-gray-700 dark:text-gray-400">
       {t("sc3Text2")}  </p>

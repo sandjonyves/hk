@@ -26,7 +26,7 @@ function Footter() {
               <Footer.Title title="about" />
               <Footer.LinkGroup col>
                 <Footer.Link href="#">Cabinet hk</Footer.Link>
-                <Footer.Link href="#">DG</Footer.Link>
+                <Footer.Link href='tel:\\699852502'>DG</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
@@ -34,7 +34,7 @@ function Footter() {
               <Footer.LinkGroup col>
                 <Footer.Link href="#">Watsapp</Footer.Link>
                 <Footer.Link href="#">Facebook</Footer.Link>
-                <Footer.Link>          <div color='bg-transparent' className=' ' href='tel:\\6242007263'><span className='text-primary  hover:text-green-500 ' ><FaPhoneAlt color='  '/> (+237)6242007263</span></div>
+                <Footer.Link>          <div color='bg-transparent'  href='tel:\\6242007263'><span className='text-primary  hover:text-green-500 ' ><FaPhoneAlt color='  '/> (+237)6242007263</span></div>
                 </Footer.Link>
                 {/* <Footer.Link>
                 <div color='bg-transparent' className='bg-primary  hover:bg-green-500 ' href='tel:\\6222222292'><FaPhoneAlt color='blue'/> <span className='text-white' >(+237)6222222292</span></div>
@@ -56,10 +56,10 @@ function Footter() {
           <Footer.Copyright href="#" by="Cabinet HK™" year={2023} />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
               <PiWhatsappLogoThin color='green' size={40} cursor='pointer'/>
-              <FaSquareFacebook color='blue' size={40} cursor='pointer'/>
+              {/* <FaSquareFacebook color='blue' size={40} cursor='pointer'/>
               <PiInstagramLogoBold color='red' size={40} cursor='pointer'/>
               <SiGmail color='red' size={40} cursor='pointer' />
-              <SiYahoo color='violet' size={40} cursor='pointer'/>
+              <SiYahoo color='violet' size={40} cursor='pointer'/> */}
 
              
           </div>
