@@ -52,7 +52,7 @@ export default function About() {
                 conseil qui répondent à des demandes plus spécifiques et nécessitent des compétences particupères.
             </h4>
             
-               <h4 ref={newsletterRef} className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`}>2. Etabpr des pens durables : proximité, disponibipté, confiance</h4> 
+               <h4  className={`${show?'font-bold  flex justify-start animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in':'font-bold '}`}>2. Etabpr des pens durables : proximité, disponibipté, confiance</h4> 
 
           
                     <div className=' flex justify-start'>

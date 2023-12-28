@@ -15,7 +15,8 @@ export default function Carousels() {
 
 <div className="h-56 sm:h-64 xl:h-80 2xl:min-h-[70vh]">
       <Carousel leftControl="left" rightControl="right">
-        {Image.map((img,i) => <img src={img} key={i} className='h-full'></img>)}
+        <img src={image1} alt="image de nos engagements" srcset="" />
+        {/* {Image.map((img,i) => <img src={img} key={i} className='h-full'></img>)} */}
       </Carousel>
     </div>
  </> )

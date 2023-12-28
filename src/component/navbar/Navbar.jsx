@@ -7,13 +7,20 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { useState } from 'react';
 import { Modals } from '../modal/modal';
 import { PiFacebookLogoLight, PiFacebookLogoThin, PiInstagramLogoBold, PiWhatsappLogoThin } from "react-icons/pi";
+import { useTranslation } from 'react-i18next';
 import { FaSquareFacebook } from "react-icons/fa6";
 import { Link, Element, animateScroll as scroll } from 'react-scroll';
-
+import i18n from '../../i18n.js/i18n';
 export default function Component() {
   const [openModal,serOpenMo1dal] = useState(false)
-
+  const {t}=useTranslation()
+ const onChangeLangage = (e)=>{
+  i18n.changeLanguage(e.target.value)
+  alert(e.target.value)
+  
+ }
   return (
+  
     <>
     <Navbar fluid rounded className='opacity-90 '>
       <Navbar.Brand href="/">
@@ -26,10 +33,17 @@ export default function Component() {
         <p onClick={serOpenMo1dal(true)}>HJHJHJHJHJ</p> */}
         
       <Button  color='green' className='bg-primary' href='tel:\\699852502' ><FaPhoneAlt color='white'/><span className='text-white' >(+237)699852502</span></Button>
-      {/* <Button  color='green' className='bg-green-400' href='tel:\\677795125'> <span className='text-white' >(+237)677795125</span></Button> */}
-      
-    
-        <Navbar.Toggle />
+      {/* <Button  color='green' className='bg-green-400' href='tel:\\677795125'> <span className='text-white' >(+237)677795125</span></Button> */}  
+     <div>
+        <select onChange={onChangeLangage}>
+            <option value='fr'>
+              fr
+            </option>
+            <option value='en'>
+              en
+            </option>
+        </select>
+     </div>
       </div>
       <Navbar.Collapse>
         <Navbar.Link href="#" active>
@@ -43,28 +57,24 @@ export default function Component() {
               smooth={true}
               offset={-70}
               duration={2000}
-            
             >
           Service
         </Link>
       </Navbar.Link>
         <Navbar.Link href=""><Link
-  activeClass="active"
-  to="about"
-  spy={true}
-  smooth={true}
-  offset={-70}
-  duration={2000}
->
- About
-</Link>
-</Navbar.Link>
+                                  activeClass="active"
+                                  to="about"
+                                  spy={true}
+                                  smooth={true}
+                                  offset={-70}
+                                  duration={1000}
+                              >
+                              About
+                              </Link>
+        </Navbar.Link>
        
-        <Navbar.Link href="#"  >   <Dropdown label="Contact" className='z-100' inline placement='left'>
-      <Dropdown.Item ><PiWhatsappLogoThin color='green' size={40}/>Whatsappd</Dropdown.Item>
-      <Dropdown.Item ><FaSquareFacebook color='blue' size={40}/>Facebook</Dropdown.Item>
-      <Dropdown.Item ><PiInstagramLogoBold color='red' size={40}/>Instagramme</Dropdown.Item>
-    
+        <Navbar.Link href="#"  >   <Dropdown label="Contact"  inline placement='left' >
+      <Dropdown.Item className='mr-[200px]' ><PiWhatsappLogoThin color='green' size={40}/>Whatsappa</Dropdown.Item>
     </Dropdown></Navbar.Link>
       </Navbar.Collapse>
 

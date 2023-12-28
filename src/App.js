@@ -8,7 +8,7 @@ import Carousels from './component/carousel/Carousel';
 import Footter from './component/Footter/Footter';
 import About from './page/About';
 import { Modals } from './component/modal/modal';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import ButtonGroup from './component/ButtonGroup/ButtonGroup';
 import Forms from './component/form/Forms';
 function App() {
@@ -35,7 +35,10 @@ function App() {
       {/* <Component></Component> */}
     
       <section >
+     
       <Home></Home>
+  
+   
    
 </section> 
 {/* <div class='image2' >

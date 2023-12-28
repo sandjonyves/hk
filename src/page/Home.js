@@ -1,52 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { Button, Card, Dropdown } from "flowbite-react";
+import React, { useState, useTransition } from "react";
+import { Card} from "flowbite-react";
 import Carousels from "../component/carousel/Carousel";
-
 import './style/home.css'
-
-import Cards from "../component/Card/Card";
 import Cards2 from "../component/card2/Card";
-import ButtonGroup from "../component/ButtonGroup/ButtonGroup";
 import Component from "../component/navbar/Navbar";
-
-
 import Service from "./Service";
-import { CSSTransition } from "react-transition-group";
-import { Transition } from 'react-transition-group';
-import { useRef } from 'react';
-import Section from "./Test";
-import { PiInstagramLogoBold, PiWhatsappLogoFill, PiWhatsappLogoThin } from "react-icons/pi";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaPhoneAlt } from "react-icons/fa";
-import { SiGmail, SiYahoo } from "react-icons/si";
-import image from './logo192.png'
 import { Link } from "react-scroll";
 import imgabeBackgound from '../assets/back/image9.jpg'
 import Forms from "../component/form/Forms";
-
-
-
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n.js/i18n";
 export default function Home() {
 
-  //text parlent de hk
-
-  const newsletterRef = useRef()
-   const [show,setShow] =useState(false)
-  // useEffect(()=>{
-  //   const observer  = new IntersectionObserver(entrie=>{
-  //     if(entrie[0].isIntersecting){
-  //       // const footer =document.querySelector("#footer").setAttribute('class','')
-  //       setShow(true)
-  //       observer.unobserve(newsletterRef.current)
-  //       console.log('entreier',entrie[0])
-  //     }else{
-  //       setShow(false)
-  //     }
-  //   })
-  // observer.observe(newsletterRef.current)  
-  // console.log('obsever',observer)
-  // },[])
-
+  const {t} = useTranslation()
+const [show,setShow] = useState(false)
  
   return (
       
@@ -63,16 +30,15 @@ export default function Home() {
 
       </span></li></ul></div><div class="flex-1 flex flex-col justify-center flex-shrink lg:mr-20 lg:pr-6 h-full pb-6">
         <h1 class="text-3xl font-bold pt-6 md:pt-0 pr-16 tracking-snug md:leading-none md:whitespace-pre-line text-hrbgreen-600 lg:text-5xl">
-        CABINET HK AUDIT & CONSEILS</h1><h2 class="pt-3 md:pt-6 md:whitespace-pre-line text-gray-900  text-xl pr-8">
-        Que vous souhaitiez déclarer vos impôts auprès d'un expert dans un bureau, à distance ou le faire vous-même, nous vous proposons plusieurs façons de déclarer.
-
+        {t("s1Title")}</h1><h2 class="pt-3 md:pt-6 md:whitespace-pre-line text-gray-900  text-xl pr-8">
+        {t("title")}
             </h2><div class="flex flex-col md:flex-row"><div class="flex flex-col md:flex-row pt-5 md:pt-6"><div class="md:flex items-center justify-start w-full md:w-min"><div class="CTA flex inline whitespace-nowrap  w-full md:w-max"><div class="relative w-full ">
             <Link to="about"
                          class="flex mx-auto md:mx-0 outline-none focus:outline-black border-transparent border-2 text-white
                           bg-black hover:bg-gray-800 leading-none w-full md:w-auto justify-center inline-flex 
                           font-medium items-center px-4 py-5 md:py-4 lg:px-6 border border-transparent text-base leading-6 
                           focus:outline-black transition ease-in-out duration-150">
-                       conctacter un expert   </Link></div></div></div></div><div class="flex flex-col md:flex-row pt-5 md:pt-6">
+                     {t("s1Btn1")}  </Link></div></div></div></div><div class="flex flex-col md:flex-row pt-5 md:pt-6">
                   <div class="md:flex items-center justify-start w-full md:w-min"><div class="px-2 text-gray-900">
                     </div><div class="CTA flex inline whitespace-nowrap  w-full md:w-max"><div class="relative w-full ">
                       
@@ -81,7 +47,7 @@ export default function Home() {
                class="text-white flex mx-auto md:mx-0 outline-none focus:outline-black border-transparent 
                border-2 text-white bg-primary  hover:bg-green-500 no-underline hover:bg-green-800 leading-none w-full md:w-auto justify-center inline-flex font-medium items-center px-4 py-5 md:py-4 lg:px-6 border-transparent 
                        leading-6 focus:outline-black transition ease-in-out duration-150">
-                  prendre rendez vous </button>
+                    {t("s1Btn2")} </button>
                           </div></div></div></div></div></div>
       </div>
       <div class="flex-2 mt-1 relative text-left ">
@@ -115,60 +81,40 @@ export default function Home() {
   <section>
     <div class="flex md:flex-wrap overflow-hidden max-w-screen-2xl px-0 md:px-20 md:py-10 flex-col md:flex-row ">
     <div class="flex w-full flex-col md:px-0 text-center px-6">
-    <h2 class="md:px-8 text-3xl md:text-4xl py-8 font-bold text-black w-11/12 md:w-5/6 lg:w-8/12 xl:w-1/2 ">Travailler avec un Expert  Comptable.</h2>
+    <h2 class="md:px-8 text-3xl md:text-4xl py-8 font-bold text-black w-11/12 md:w-5/6 lg:w-8/12 xl:w-1/2 ">
+    {t("s2Title")}</h2>
     <div class="py-3 md:px-8 mx-auto text-xl md:w-8/12 textColor">
-    <p> Directeur Administraif et Finencier a temps partage partenaire de votre gestion finaciere.</p>
+    <p>   {t("s2Text1")}</p>
     </div>
 
     <div class='grid md:grid-cols-3 grid-cols-1 -md:justify-ceenter '>
        <div>
        <Card className="max-w-sm">
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      Experts-comptables
+      {t("sc1Text1")}
       </h5>
       <p className="font-normal text-gray-700 dark:text-gray-400">
-      Nous vous  offrons une gamme de services aux entreprises et aux particuliers. 
-      Outre la tenue des comptes et la préparation des états financiers, des conseils en matière de fiscalité, 
-      d'optimisation fiscale, de gestion financière, de planification successorale, d'évaluation d'entreprise, de conformité réglementaire, 
-      de conseil en matière de fusion et acquisition, et bien d'autres services liés à la gestion financière.
-      </p>
+      {t("sc1Text1")}  </p>
   
     </Card>
        </div>
        <div>
        <Card className="max-w-sm">
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-       Commissaire au compte
+      {t("sc2Text1")}
       </h5>
       <p className="font-normal text-gray-700 dark:text-gray-400">
-      Nos commissaires aux comptes prennent la peinne de respecter la confidentialité 
-      des informations qu'il obtient lors de son audit Et est soumis à un devoir de secret professionnel
-       et ne peut divulguer ces informations qu'en cas d'obligation légale ou avec le consentement de l'entreprise.
-      </p>
-      {/* <Button>
-        Read more
-        <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fillRule="evenodd"
-            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </Button> */}
+      {t("sc2Text2")} </p>
+
     </Card>
        </div>
        <div>
          <Card className="max-w-sm">
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-         Audit comptable
+      {t("sc2Text1")}
       </h5>
       <p className="font-normal text-gray-700 dark:text-gray-400">
-      Par nos Audits comptables  vous avez plusieurs avantages. le renforcement de la confiance des parties prenantes, 
-      telles que les actionnaires, les créanciers et les investisseurs, envers les informations financières de l'entreprise. 
-      Il aide également les dirigeants à détecter et à corriger les erreurs, les fraudes ou les pratiques comptables inappropriées.
-       De plus, la contribuer à l'amélioration  des processus 
-      et les contrôles internes de l'entreprise en identifiant les zones de risques et en proposant des recommandations pour les améliorer.
-      </p>
+      {t("sc3Text2")}  </p>
       {/* <Button>
         Read more
         <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -186,7 +132,7 @@ export default function Home() {
                          bg-primary  hover:bg-green-500  leading-none w-full md:w-auto justify-center inline-flex 
                           font-medium items-center px-4 py-5 md:py-4 lg:px-6 border border-transparent text-base leading-6 
                           focus:outline-green transition ease-in-out duration-150">
-           Nous Conctacter 
+           {t("s2Btn")}
         <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path
             fillRule="evenodd"

@@ -1,5 +1,5 @@
 import { Card } from 'flowbite-react'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 
 export default function Service() {
 

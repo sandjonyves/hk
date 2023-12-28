@@ -1,12 +1,15 @@
 
 
 import { Button, Card } from 'flowbite-react';
-import { Typewriter,Cursor } from 'react-simple-typewriter';
+
+import { useTranslation } from 'react-i18next';
 function Cards() {
+
+  const {t} = useTranslation()
   return (
     <div className="bg-trasparent  max-w-xl min-w-lg  justify-align-center ">
       <h5 className=" text-3xl font-bold tracking-tight  text-green-500 sapce-y-3">
-      CABINET HK AUDIT & CONSEILS
+      {t('s2Title')}
       </h5>
       <p className="font-normal text-2xl text-gray-700 dark:text-gray-400">
             {/* <Typewriter
@@ -20,7 +23,7 @@ function Cards() {
             delaySpeed={1000}
             
             ></Typewriter> */}
-            Directeur Administraif et Finencier a tempspartage partenaire de votre gestion finaciere
+            {t('s2Text1')}
             {/* <span>
                 <Cursor cursorStyle='<' cursorColor='green'></Cursor>
             </span> */}
@@ -28,7 +31,7 @@ function Cards() {
       </p>
       <p>
         <Button  >
-          Prenez rendez vous
+        {t('s2Btn')}
         </Button>
       </p>
     </div>

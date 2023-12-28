@@ -21,7 +21,7 @@ const titleDomaine = 'Notre approche du métier'
 const [openModal2,setOpenModal2] =useState()
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3  md:space-y-0 space-y-10 space-x-0 md:space-x-20 text-white font-semibold">
+    <div className="grid grid-cols-1 md:grid-cols-3  md:space-y-auto space-y-20 space-x-0 md:space-x-20 text-white font-semibold">
       <Modals openModal={openModal} body={textexp} title={title} setOpenModal={setOpenModal} ></Modals>
       <Modals openModal={openModal2} body={textDomain} title={titleDomaine} setOpenModal={setOpenModal2} ></Modals>
         
