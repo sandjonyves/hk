@@ -48,6 +48,21 @@
           "s5Title2":"1. Sustainable thinking stage: proximity, availability, trust",
             "s5Text3":"Thanks to its human-sized organization, HK AUDIT & CONSEILS, in its relationships with its representatives, has a flexibility of intervention which allows it to adapt its service offering to the usual and specific needs of companies. The personal commitment of each associate and the great permanence of the teams are major assets for HK AUDIT & CONSEILS. All employees share the same service culture which allows for responsiveness, availability and efficiency.",
           "s5Title3":"2. Skills for the Universes of Our Customers",
-            "s5Text4":"Our presence with SMEs and SMIs, as well as our very good knowledge of the Organization sector, have allowed us to acquire multiple skills and make our teams specialists in these areas."
-      }
+            "s5Text4":"Our presence with SMEs and SMIs, as well as our very good knowledge of the Organization sector, have allowed us to acquire multiple skills and make our teams specialists in these areas.",
+      
+          "form":"Contact form",
+          "nom":"Your Name",
+          "requiered":"This field is requiered ",
+          "business":"Your Business",
+          "email":"youe Mail",
+                  "emailError":"",
+          "Number":"Phone Number",
+                "NumberErreur1":"Invalid Number ",
+                "NumberErreur2":"The Number start with 6",
+          "subject":"Subject",
+          "decription":"Description",
+                  "descriptionError":"the maximum number of characters is 128"
+
+          }
     
+      

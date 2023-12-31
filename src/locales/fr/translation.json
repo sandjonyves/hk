@@ -53,4 +53,18 @@
         "s5Text3":"Grâce à son organisation de taille humaine, HK AUDIT & CONSEILS, dans ses rapports avec ses cpents, possède une souplesse d’intervention qui permet de moduler son offre de services aux besoins usuels et spécifiques des entreprises. L'engagement personnel de chaque associé et la grande permanence des équipes sont des atouts majeurs pour HK AUDIT & CONSEILS. Tous les collaborateurs partagent une même culture de service qui permet d’alper réactivité, disponibipté et efficacit",
       "s5Title3":"3. Compétences pées Aux Univers De Nos Cpents ",
         "s5Text4":"Notre présence auprès de PME-PMI, ainsi que notre très bonne connaissance du secteur des Organisations nous ont permis d'acquérir des compétences multiples et de faire de nos équipes des spéciapstes dans ces domaines. "
-  }
+  
+
+       ,"form":"Formulaire de contact",
+        "nom":"Votre Nom ",
+        "requiered":"verifier ce champs",
+        "business":"Votre business",
+        "email":"Votre Email",
+                "emailError":"check email address",
+        "Number":"Numero de Telephone",
+              "NumberErreur1":"Numero Incomplet",
+              "NumberErreur2":"Le Numero Doit commencer par 6",
+        "subject":"Sujet",
+        "decription":"Decription",
+                "descriptionError":"le nombre max de caractere est de 128"
+      }

@@ -10,7 +10,25 @@ import imgabeBackgound from '../assets/back/image9.jpg'
 import Forms from "../component/form/Forms";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n.js/i18n";
+import axios from "axios";
 export default function Home() {
+  
+
+  axios ({
+    method:'post',
+    url:"http://localhost:5000/api/Data/",
+    data:{
+       'name':'sdsds',
+     
+    }
+ }).then((res) =>{
+    alert('jkjkj')
+    
+ }).catch((res) =>{
+    alert(res);
+   
+ })
+
 
   const {t} = useTranslation()
 const [show,setShow] = useState(false)
