@@ -63,6 +63,9 @@
           "decription":"Description",
                   "descriptionError":"the maximum number of characters is 128"
 
-          }
+          
+          ,"bardMag":"an error has occurred",
+          "goodMag":"Your message has been sent successfully"
+                }
     
       

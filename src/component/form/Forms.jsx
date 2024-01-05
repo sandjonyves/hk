@@ -1,12 +1,13 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useForm} from 'react-hook-form'
 // import * as yup from "yup"
 // import {yupResolver} from "@hookform/resolvers/yup"
 import axios from 'axios';
-import { Button, Checkbox, Label, Modal, TextInput,Textarea,Select} from 'flowbite-react';
+import { Button, Checkbox, Label, Modal, TextInput,Textarea,Select, Alert} from 'flowbite-react';
 import { useTranslation } from 'react-i18next';
 import { json } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 
 
@@ -14,10 +15,15 @@ import { json } from 'react-router-dom';
 function Forms(props) {
 const {t}= useTranslation()
 
-const [verifData,setVerifData] = useState(false)
+const [verifData,setVerifData] = useState(0)
 const {handleSubmit,register,formState: {errors}} = useForm()
 
+const [isLoading,setIsLoading] = useState(false)
 
+const message =() =>{
+
+
+}
 
 // async function fetchData() {
 //   try {
@@ -35,6 +41,25 @@ const {handleSubmit,register,formState: {errors}} = useForm()
 // }
 
 // fetchData();
+
+
+var counter =5;
+var intervalId = null;
+function finish() {
+  clearInterval(intervalId);
+  window.location.reload();
+}
+function bip() {
+    counter--;
+    if(counter == 0) finish();
+    else {	
+       setVerifData(1)
+      
+    }	
+}
+function start(){
+  intervalId = setInterval(bip, 1000);
+}	
 const  onSubmit= async (data)=>{
 
       // const datas = await fetch('http://localhost:5000/api/data/') 
@@ -74,16 +99,42 @@ const  onSubmit= async (data)=>{
       // })
       // .then(data => {
       //   console.log(data);
-      //   // Assurez-vous que le code à l'intérieur de cette fonction s'exécute
       // })
       // .catch(error => {
       //   console.error(error);
-      //   // Si une erreur se produit, assurez-vous que le code à l'intérieur de cette fonction s'exécute
       // });
   
+// fetch('http://localhost:5000/api/data', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({
+//     'name':data.Name,
+//     'business':data.business,
+//     'email':data.email,
+    
+//     'number':data.number,
+//     'subject':data.subject,
+//     'description':data.description
+//   }),
+// })
+//   .then(response => response.json())
+//   .then(data => {
+//     alert('bonjour')
+//     // Utiliser les données de la réponse
+//   })
+//   .catch(error => {
+//     alert('erreyr')
+//     // Gérer les erreurs
+//   });
 
 
-  axios.post('http://localhost:2000/api/Data/',{
+// view the loading
+setIsLoading(true)
+
+
+  axios.post('http://localhost:5000/api/data',{
  
        'name':data.Name,
        'business':data.business,
@@ -94,15 +145,28 @@ const  onSubmit= async (data)=>{
        'description':data.description
     
  }).then((res) =>{
-    //setIsLoading(false)
-    alert('good')
+  //clase loading
+    setIsLoading(false)
+    
+     
+  //open the message to certify your mail
+    
+  start()
+    //  alert('good')
+    //  alert(isLoading)
+    // document.getElementById('submit').setAttribute('disabled')
     // setVerify(true)
     
  }).catch((res) =>{
     
+   //close loading
+  
+    setIsLoading(false)
+    setVerifData(2)
    
-    // setIsLoading2(false)
-    alert('bard')
+    
+
+  //  clearTimeout(x)
  })
 
 // const elm=true
@@ -113,7 +177,8 @@ const  onSubmit= async (data)=>{
 //   elm=elm.verif
 //   }).catch(()=> alert('bard'))
   
-  
+
+   
 //  }
 
 //  alert(verifData)
@@ -156,8 +221,8 @@ const  onSubmit= async (data)=>{
           maxLength:32,
           minLength:2,
         })} shadow />
-    {errors.Name && <p className="text-red-300">{t('requiered')}</p>}
-    {/* {errors.Name && errors.Name.types==="maxLength"  &&<p className="text-red-300">verifier ce champ </p>}      */}
+    {errors.Name && <p className="text-red-500">{t('requiered')}</p>}
+    {/* {errors.Name && errors.Name.types==="maxLength"  &&<p className="text-red-500">verifier ce champ </p>}      */}
 </div>
 <div>
 <div className="mb-2 block">
@@ -169,7 +234,7 @@ const  onSubmit= async (data)=>{
     maxLength:32,
     minLength:2,
   })}/>
-          {errors.business && <p className="text-red-300">{t('required')} </p>}
+          {errors.business && <p className="text-red-500">{t('requiered')} </p>}
 </div>
 
 
@@ -185,8 +250,8 @@ const  onSubmit= async (data)=>{
 />
 {errors.email && errors.email.type ==="pattern" &&(
      //  {veryf},
-    <p className="text-red-300">{t('emailError')}</p>)}
-  {errors.email && errors.email.type ==="required" &&<p className="text-red-300"> {t('requiered')}</p>}
+    <p className="text-red-500">{t('emailError')}</p>)}
+  {errors.email && errors.email.type ==="required" &&<p className="text-red-500"> {t('requiered')}</p>}
 </div>
 <div>
 <div className="mb-2 block">
@@ -194,12 +259,12 @@ const  onSubmit= async (data)=>{
 </div>
 <div className="flex flex-col mb-2 ">
 
-         {errors.name && <p className="text-red-300">{t('required')} </p>}
+         {errors.name && <p className="text-red-500">{t('requiered')} </p>}
          <TextInput type='text'  placeholder='678727647'
            {...register("number", {
             required: true,
             maxLength:9 ,
-            pattern:/^6[0-9]/ ,
+            //pattern:/^(\6)(2[2368]|3[235679]|4[79]|5[5789]|6[89]|7[01234569]|8[1345679])(\d{7})$/,
             minLength:9
           
           })}
@@ -207,16 +272,16 @@ const  onSubmit= async (data)=>{
            />
             {errors.number && errors.number.type ==="maxLength" ?(
                //  {veryf},
-              <p className="text-red-300"> {t('required')}</p>):
+              <p className="text-red-500"> {t('requiered')}</p>):
               errors.number && errors.number.type ==="minLength" ?(
                //  {veryf},
-              <p className="text-red-300"> {t('NumberErreur1')}</p>):
+              <p className="text-red-500"> {t('NumberErreur1')}</p>):
               true
               }
-              {errors.number && errors.number.type ==="pattern" &&(
+              {/* {errors.number && errors.number.type ==="pattern" &&(
                //  {veryf},
-              <p className="text-red-300"> {t('NumberErreur2')}</p>)}
-            {errors.number && errors.number.type ==="required" &&<p className="text-red-300"> champ vide</p>}
+              <p className="text-red-500"> {t('NumberErreur2')}</p>)} */}
+            {errors.number && errors.number.type ==="required" &&<p className="text-red-500"> {t("requiered")}</p>}
       </div>
 </div>
 <div className="max-w-md">
@@ -249,22 +314,31 @@ const  onSubmit= async (data)=>{
  />
  {errors.description && errors.description.type ==="maxLength" ?(
                //  {veryf},
-              <p className="text-red-300"> {t('descriptionError')}</p>):
-              errors.number && errors.description.type ==="required" ?(
+              <p className="text-red-500"> {t('descriptionError')}</p>):
+              errors.description && errors.description.type ==="required" ?(
                //  {veryf},
-              <p className="text-red-300"> {t('required')} </p>):
+              <p className="text-red-500"> {t('requiered')} </p>):
               true
               }
 </div>
 <Modal.Footer  className='flex justify-center'>
-          <Button  type='submit' color='bg-green-500' className='bg-green-500 text-white' >Send your mail</Button>
-         
+          {verifData===2? <Button  type='submit' id="submit" color='bg-green-500' className='bg-green-500 text-white' >Send your mail</Button>
+          :verifData==1?<Button disabled type='submit' id="submit" color='bg-green-500' className='bg-green-500 text-white' >Send your mail</Button>
+
+                  :<Button  type='submit' id="submit" color='bg-green-500' className='bg-green-500 text-white' >Send your mail</Button>
+          }
         </Modal.Footer>
 </form>
             </p>
           </div>
+              {/* compoment loading */}
+              {isLoading===true &&  <Loading ></Loading>}
+         
+          {verifData===2 ? <Alert color='failure'> {t('bardMsg')} </Alert>:
+          verifData==1?
+                  <Alert color='green'> {t('goodMsg')} </Alert>:null}
         </Modal.Body>
-       
+         
       </Modal>
   </di>  
   );

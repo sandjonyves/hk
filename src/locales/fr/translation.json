@@ -67,4 +67,7 @@
         "subject":"Sujet",
         "decription":"Decription",
                 "descriptionError":"le nombre max de caractere est de 128"
-      }
+                ,"bardMsg":"une erreur s'est produise",
+                "goodMsg":"votre message a été envoyé avec succès"
+      
+              }

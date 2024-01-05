@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Cards2 from '../component/card2/Card'
+import  { useRef, useState } from 'react'
 import { Card } from 'flowbite-react'
 import { useTranslation } from 'react-i18next'
 export default function About() {
@@ -22,7 +21,7 @@ export default function About() {
   return (
     <div name='about'>
 
-        <Card  className="border-x-4 border-green-500 mb-20 md:m-40 m-0 drop-shadow-lg"  >
+        <Card  className="border-x-4 border-green-500 mb-10 md:m-40 m-0 drop-shadow-lg"  >
 
             <h4  className={`font-bold  text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-start animate-flip-up animate-ease-in'}`} >
            {t("s5Title")}

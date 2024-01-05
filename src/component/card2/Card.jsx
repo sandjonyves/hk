@@ -22,7 +22,7 @@ function Cards2() {
   // observer.observe(newsletterRef.current)  
   // },[])
   return (
-    <Card  className="border-x-4 border-y-4 mb-20 md:m-5 m-0 drop-shadow-lg"  >
+    <div  className=" mb-20 md:m-5 m-0  bg-gray-200"  >
 
         <h4 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {t("s3Title")}
@@ -38,7 +38,7 @@ function Cards2() {
       
       {t("s3Text2")}
       </p>
-    </Card>
+    </div>
   );
 }
 export default Cards2

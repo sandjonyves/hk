@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import {Button, Footer} from "flowbite-react"
 import Component from "./component/navbar/Navbar"
 
@@ -30,8 +30,10 @@ function App() {
   // observer.observe(newsletterRef.current)  
   // },[])
 
+
+   
   return (
-    <div className="App ">
+    <div className="App bg-gray-200">
       {/* <Component></Component> */}
     
       <section >
@@ -54,18 +56,7 @@ function App() {
       
 
 
-    <div >
-          <About></About>
-    </div>
-          
-          <div>
-            <Forms></Forms>
-          </div>
-          
-    <footer >
-        <Footter ></Footter>
-       
-    </footer>
+  
 
  
 

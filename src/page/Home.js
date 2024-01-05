@@ -11,32 +11,68 @@ import Forms from "../component/form/Forms";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n.js/i18n";
 import axios from "axios";
+import Footter from "../component/Footter/Footter";
+import About from "./About";
 export default function Home() {
   
 
-  axios ({
-    method:'post',
-    url:"http://localhost:5000/api/Data/",
-    data:{
-       'name':'sdsds',
-     
-    }
- }).then((res) =>{
-    alert('jkjkj')
-    
- }).catch((res) =>{
-    alert(res);
+//   axios ({
+//     method:'post',
+//     url:"http://127.0.0.1:8000/api",
+//     data:{
+//       name:"bonjour"
+//     }
    
- })
+//  })
+//  .then((res) =>{
+//   alert(res);
+//   alert('sdjkdsj');
+//   alert('okjfdf');
+  
+// })
 
+//  .catch((res) =>{
+//   alert('erreur')
+//     alert(res);
+   
+//  })
 
+// fetch('http://localhost:5000/api/data', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({
+//     key1: 'value1',
+//     key2: 'value2',
+//   }),
+// })
+//   .then(response => response.json())
+//   .then(data => {
+//     alert('bonjour')
+//     // Utiliser les données de la réponse
+//   })
+//   .catch(error => {
+//     alert('erreyr')
+//     // Gérer les erreurs
+//   });
+
+// axios.post('http://localhost:8000/api/endpoint', { data: 'valeur' })
+//   .then(response => {
+//     alert('bonjour')
+//     // Traiter la réponse ici
+//   })
+//   .catch(error => {
+//     alert('erreur')
+//     // Gérer les erreurs ici
+//   });
   const {t} = useTranslation()
 const [show,setShow] = useState(false)
  
   return (
       
 <div>
-<header class="header" > <Component class="header"></Component></header>
+<header className="sticky top-0 z-[60]" > <Component class="header"></Component></header>
 
   <section className="">
   <div class="grid grid-cols-1 md:grid-cols-2  max-w-screen-4xl md:pt-0 lg:pl-24 md:flex-row mx-auto md:pr-0 flex flex-col mr-0">
@@ -96,18 +132,30 @@ const [show,setShow] = useState(false)
 
   </section>
 
-  <section>
+  <section className=" bg-primary">
     <div class="flex md:flex-wrap overflow-hidden max-w-screen-2xl px-0 md:px-20 md:py-10 flex-col md:flex-row ">
-    <div class="flex w-full flex-col md:px-0 text-center px-6">
-    <h2 class="md:px-8 text-3xl md:text-4xl py-8 font-bold text-black w-11/12 md:w-5/6 lg:w-8/12 xl:w-1/2 ">
+    <div class="flex w-full flex-col md:px-0 justify-center items-center  px-6">
+    <h2 class="md:px-8 text-3xl justify-center items-center inline-flex  md:text-4xl py-8 font-bold text-white w-11/12 md:w-5/6 lg:w-8/12 xl:w-1/2 ">
     {t("s2Title")}</h2>
-    <div class="py-3 md:px-8 mx-auto text-xl md:w-8/12 textColor">
+    <div class="py-3 md:px-8 mx-auto text-xl md:w-8/12 text-gray-100 mb-10">
     <p>   {t("s2Text1")}</p>
     </div>
 
-    <div class='grid md:grid-cols-3 grid-cols-1 -md:justify-ceenter '>
+    <div class='grid md:grid-cols-3 grid-cols-1 -md:justify-center '>
        <div>
-       <Card className="max-w-sm">
+
+       <Card className="max-w-sm md:min-h-[430px]">
+      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      {t("sc2Text1")}
+      </h5>
+      <p className="font-normal text-gray-700 dark:text-gray-400">
+      {t("sc2Text2")} </p>
+
+    </Card>
+  
+       </div>
+       <div>
+       <Card className="max-w-sm md:min-h-[430px] mx-o md:mx-3 mt-5 md:mt-0">
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
       {t("sc1Text1")}
       </h5>
@@ -117,17 +165,7 @@ const [show,setShow] = useState(false)
     </Card>
        </div>
        <div>
-       <Card className="max-w-sm">
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      {t("sc2Text1")}
-      </h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
-      {t("sc2Text2")} </p>
-
-    </Card>
-       </div>
-       <div>
-         <Card className="max-w-sm">
+         <Card className="max-w-sm md:min-h-[430px]  mt-5 md:mt-0">
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
       {t("sc3Text1")}
       </h5>
@@ -146,8 +184,8 @@ const [show,setShow] = useState(false)
     </Card>
        </div>
        
-         <button onClick={() => setShow(true)} className="m-4 flex mx-auto md:mx-0 outline-none focus:outline-green border-transparent border-2 text-white
-                         bg-primary  hover:bg-green-500  leading-none w-full md:w-auto justify-center inline-flex 
+         <button onClick={() => setShow(true)}  className="m-4 flex mx-auto md:mx-0 outline-none focus:outline-green border-transparent border-2 text-white
+                         bg-black  hover: leading-none w-full md:w-auto justify-center inline-flex 
                           font-medium items-center px-4 py-5 md:py-4 lg:px-6 border border-transparent text-base leading-6 
                           focus:outline-green transition ease-in-out duration-150">
            {t("s2Btn")}
@@ -253,7 +291,7 @@ const [show,setShow] = useState(false)
 </section>
   */}
  
-  <div class="card2 "   className={`m-4 flex justify-center  align-item-center`}>
+  <div class="card2 "   className={`mt-20 mb-10 m-4 flex justify-center  align-item-center`}>
     <Cards2>
 
     </Cards2>
@@ -265,7 +303,7 @@ const [show,setShow] = useState(false)
       </ButtonGroup>
     </div>
   </div> */}
-  <div className="mb-10">
+  <div className="">
   <Carousels>
 
 </Carousels>
@@ -273,11 +311,23 @@ const [show,setShow] = useState(false)
   </div>
 
 
-<div id="service" >
+<div id="service" className="mt-20">
         <Service></Service>
      
 </div>
 
+<div className=''>
+          <About></About>
+    </div>
+          
+          {/* <div >
+            <Forms></Forms>
+          </div> */}
+          
+    <footer >
+        <Footter ></Footter>
+       
+    </footer>
 </div>
         
    

@@ -21,7 +21,7 @@ export default function Service() {
   return (
     <div name='service'>
 
-        <Card  className="border-x-4 border-green-500 my-10 md:mx-40 mx-0 drop-shadow-lg"  >
+        <Card  className="border-x-4 border-green-500 my-5 md:mx-40 mx-0 drop-shadow-lg"  >
 
         <h4 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {t("s4Title")}
